@@ -14,13 +14,13 @@ router.get("/:id", async (req, res) => {
   res.json(note);
 });
 
-// POST create
+// POST 
 router.post("/", async (req, res) => {
   const newNote = await Note.create(req.body);
   res.json(newNote);
 });
 
-// PUT update
+// PUT 
 router.put("/:id", async (req, res) => {
   const updatedNote = await Note.findByIdAndUpdate(req.params.id, req.body, { new: true });
   res.json(updatedNote);
